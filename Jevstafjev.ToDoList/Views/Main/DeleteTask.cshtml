@@ -1,0 +1,10 @@
+﻿@model DeleteTaskBindingModel
+
+<h1>Are you sure you want to delete the task?</h1>
+<div class="col-lg-4">
+    <form asp-action="DeleteTask">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input hidden asp-for="Id" class="form-control" />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+﻿@model List<Jevstafjev.ToDoList.Models.Task>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-action="AddTask" class="btn btn-dark">Add</a>
+<table class="table">
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>
+                    @if (!task.MarkedAsDone)
+                    {
+                        <a asp-action="PerformTask" asp-route-id="@task.Id" class="btn btn-dark">Is done</a>
+                    }
+                    else
+                    {
+                        <i>Completed</i>
+                    }
+
+                    <a asp-action="DeleteTask" asp-route-id="@task.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

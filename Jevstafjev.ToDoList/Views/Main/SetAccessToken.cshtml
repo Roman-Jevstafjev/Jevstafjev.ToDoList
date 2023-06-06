@@ -1,0 +1,13 @@
+﻿@model SetAccessTokenBindingModel
+
+<h1>Set access token</h1>
+<div class="col-lg-4">
+    <form asp-action="SetAccessToken">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="AccessToken"></label>
+            <input asp-for="AccessToken" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+</div>
